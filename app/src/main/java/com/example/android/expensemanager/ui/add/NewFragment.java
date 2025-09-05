@@ -1,4 +1,4 @@
-package com.example.android.expensemanager.ui.dashboard;
+package com.example.android.expensemanager.ui.add;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.android.expensemanager.databinding.FragmentDashboardBinding;
+import com.example.android.expensemanager.databinding.FragmentNewBinding;
 
-public class DashboardFragment extends Fragment {
+public class NewFragment extends Fragment {
 
-    private FragmentDashboardBinding binding;
+    private FragmentNewBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        NewViewModel newViewModel =
+                new ViewModelProvider(this).get(NewViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentNewBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textNew;
+        newViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
